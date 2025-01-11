@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('1.jpg');
+    background-size: cover; /* Membuat gambar latar belakang menutupi seluruh layar */
+    backdrop-filter: blur(4px); /* Efek blur pada latar belakang */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95); /* Transparansi untuk menonjolkan latar belakang */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header h1 {
+    color: #333;
+    margin: 0;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Form Styles */
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Button */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Result Box */
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(240, 240, 240, 0.95); /* Transparansi untuk menonjolkan latar belakang */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Output Form Styles */
+.output-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.output-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.output-form label {
+    font-weight: bold;
+}
+
+.output-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: not-allowed; /* Indikasi input tidak dapat diedit */
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .form-header p {
+        font-size: 12px;
+    }
+}
