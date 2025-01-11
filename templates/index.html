@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian Konter Handphone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Kalkulator Antrian Konter Handphone</h1>
+            <p>Hitung performa sistem antrian untuk pelayanan pelanggan di konter handphone.</p>
+        </div>
+        <form id="queueForm" class="styled-form">
+            <div class="form-group">
+                <label for="arrival_rate">Rata-rata Kedatangan Pelanggan (λ):</label>
+                <input type="number" id="arrival_rate" name="arrival_rate" step="0.01" required placeholder="Masukkan rata-rata pelanggan per jam">
+            </div>
+            <div class="form-group">
+                <label for="service_rate">Rata-rata Kecepatan Pelayanan (μ):</label>
+                <input type="number" id="service_rate" name="service_rate" step="0.01" required placeholder="Masukkan rata-rata pelanggan dilayani per jam">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="submit-button">Hitung</button>
+            </div>
+        </form>
+
+        <div id="result" class="result-box">
+            <h2>Hasil Perhitungan</h2>
+            <form class="output-form">
+                <div class="form-group">
+                    <label for="utilization">Tingkat Utilisasi (ρ):</label>
+                    <input type="text" id="utilization" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="avg_customers_system">Rata-rata Pelanggan di Sistem (L):</label>
+                    <input type="text" id="avg_customers_system" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="avg_customers_queue">Rata-rata Pelanggan dalam Antrian (Lq):</label>
+                    <input type="text" id="avg_customers_queue" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="avg_time_system">Rata-rata Waktu di Sistem (W):</label>
+                    <input type="text" id="avg_time_system" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="avg_time_queue">Rata-rata Waktu dalam Antrian (Wq):</label>
+                    <input type="text" id="avg_time_queue" readonly>
+                </div>
+            </form>
+
+            <div id="steps" class="steps-box">
+                <h3>Langkah Perhitungan</h3>
+                <ul id="stepsList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
